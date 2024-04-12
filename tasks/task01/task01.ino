@@ -46,23 +46,87 @@ void loop() {
     // digitalWrite(10, LOW);
 
   
+  
     // вторая реализация с проверкой времени
     last_check_time_micros = micros();
   
-    for (int i = 0; i < num_of_pins; i++){
-        if (last_check_time_micros - previous_led_micros[i] >= pulseDurations[i])
-        {
-            // обновляем время последнего мигания
-            previous_led_micros[i] = last_check_time_micros;
-        
-            // обновляем состояние
-            if (state[i] == LOW){
-                state[i] = HIGH; 
-            }
-            else {
-                state[i] = LOW;
-            }
-            digitalWrite(pins[i], state[i]);
+  
+    // код дублируется, так как использование циклов нежелательно
+    //1 лампочка
+    if (last_check_time_micros - previous_led_micros[0] >= pulseDurations[0])
+    {
+        // обновляем время последнего мигания
+        previous_led_micros[0] = last_check_time_micros;
+
+        // обновляем состояние
+        if (state[0] == LOW){
+          state[0] = HIGH; 
         }
+        else {
+          state[0] = LOW;
+        }
+        digitalWrite(pins[0], state[0]);
+    }
+  
+    //2 лампочка
+    if (last_check_time_micros - previous_led_micros[1] >= pulseDurations[1])
+    {
+        // обновляем время последнего мигания
+        previous_led_micros[1] = last_check_time_micros;
+
+        // обновляем состояние
+        if (state[1] == LOW){
+          state[1] = HIGH; 
+        }
+        else {
+          state[1] = LOW;
+        }
+        digitalWrite(pins[1], state[1]);
+    }
+    //3 лампочка
+    if (last_check_time_micros - previous_led_micros[2] >= pulseDurations[2])
+    {
+        // обновляем время последнего мигания
+        previous_led_micros[2] = last_check_time_micros;
+
+        // обновляем состояние
+        if (state[2] == LOW){
+          state[2] = HIGH; 
+        }
+        else {
+          state[2] = LOW;
+        }
+        digitalWrite(pins[2], state[2]);
+    }
+    //4 лампочка
+    if (last_check_time_micros - previous_led_micros[3] >= pulseDurations[3])
+    {
+        // обновляем время последнего мигания
+        previous_led_micros[3] = last_check_time_micros;
+
+        // обновляем состояние
+        if (state[3] == LOW){
+          state[3] = HIGH; 
+        }
+        else {
+          state[3] = LOW;
+        }
+        digitalWrite(pins[3], state[3]);
+    }
+
+    //5 лампочка
+    if (last_check_time_micros - previous_led_micros[4] >= pulseDurations[4])
+    {
+        // обновляем время последнего мигания
+        previous_led_micros[4] = last_check_time_micros;
+
+        // обновляем состояние
+        if (state[4] == LOW){
+          state[4] = HIGH; 
+        }
+        else {
+          state[4] = LOW;
+        }
+        digitalWrite(pins[4], state[4]);
     }
 }
